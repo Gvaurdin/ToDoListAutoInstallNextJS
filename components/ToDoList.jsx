@@ -1,4 +1,5 @@
 import { Component } from "react";
+import TextInputFunc from "./ToDoListHooks";
 
 class ToDoList extends Component {
     constructor(props) {
@@ -62,7 +63,7 @@ class ToDoList extends Component {
                     <button onClick={this.addTask}>Add</button>
                 </div>
                 <ul className="task-list">
-                    {tasks.map((task, index) => (
+                    {tasks.map((task) => (
                         <li key={task.id} className="task-item">
                             <input
                                 type="checkbox"
@@ -74,6 +75,7 @@ class ToDoList extends Component {
                         </li>
                     ))}
                 </ul>
+                <h4>Made using class components</h4>
             </div>
         )
     }
@@ -82,5 +84,6 @@ class ToDoList extends Component {
 export function ToDoListApp() {
     return <>
         <ToDoList />
+        <TextInputFunc />
     </>
 }
